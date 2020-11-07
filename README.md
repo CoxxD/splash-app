@@ -1,2 +1,2 @@
 # splash-app
-Medium article: Loading application data during splash screen
+Medium article: How to load application data during splash screen in Angular
