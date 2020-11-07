@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SplashScreenStateService } from 'src/app/services/splash-screen-state.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,12 +8,15 @@ import { SplashScreenStateService } from 'src/app/services/splash-screen-state.s
 })
 export class HomepageComponent implements OnInit {
 
-  constructor(private splashScreenStateService: SplashScreenStateService) { }
+  public myItems;
+
+  constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    setTimeout(() => {
-      this.splashScreenStateService.stop();
-    }, 5000);
+    this.activatedRoute.snapshot.data.itemsList
+      .subscribe(res => {
+        this.myItems = res;
+      })
   }
 
 }

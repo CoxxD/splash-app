@@ -6,7 +6,8 @@ import { HomepageResolver } from './resolvers/homepage.resolver';
 const routes: Routes = [
   {
     path: 'homepage',
-    component: HomepageComponent
+    component: HomepageComponent,
+    resolve: {'itemsList': HomepageResolver}
   },
   {
     path: '',

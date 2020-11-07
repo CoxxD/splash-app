@@ -19,7 +19,8 @@ import { HomepageResolver } from './resolvers/homepage.resolver';
     AppRoutingModule
   ],
   providers: [
-    SplashScreenStateService
+    SplashScreenStateService,
+    HomepageResolver
   ],
   bootstrap: [AppComponent]
 })
